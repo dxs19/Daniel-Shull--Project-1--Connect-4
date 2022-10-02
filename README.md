@@ -37,7 +37,8 @@ Days:
 6. Display proper use of global variables and function parameters (function scopes)
 7. Use camelCase for JavaScript variables
 8. Be deployed on Surge (We will cover this on Monday of project week)
-
+ ### Trello
+ link: https://trello.com/b/OoiJRY1h/connect-4-project-1-daniel-shull
 ### Credits
 1. Photo: https://www.researchgate.net/publication/258381798/figure/fig1/AS:311148797808643@1451195062476/Traditional-Connect-Four-Here-Red-wins-with-four-coins-aligned-diagonally.png
 2. Info: https://github.com/SEI-R-9-19/u1_project_prompt
