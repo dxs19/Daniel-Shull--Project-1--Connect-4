@@ -1,7 +1,8 @@
+
 const statusDisplay = document.querySelector('.gamestatus');
 gameActive = true;
-currentPlayer = "One";
-gameState = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",];
+currentPlayer = "player1";
+gameState = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 
 const winningMessage = () => `Player ${currentPlayer} won!`;
 const drawMessage = () => `Draw`;
@@ -64,7 +65,52 @@ const winningConditions = [
     [2, 10, 18, 26],
     [10, 18, 26, 34],
     [3, 11, 19, 27],
-    [20, 26, 32, 38]
-
-
+    [20, 26, 32, 38],
+    [13, 19, 25, 31],
+    [19, 25, 31, 37],
+    [6, 12, 18, 24],
+    [12, 18, 24, 30],
+    [18, 24, 30, 36]
+    [5, 11, 17, 23],
+    [11, 17, 23, 29],
+    [17, 23, 29, 35],
+    [4, 10, 16, 22],
+    [10, 16, 22, 28],
+    [3, 9, 15, 21]
 ]
+
+
+document.querySelectorALL(".cell").addEventListener('click'), () => {
+    console.log("clicked")
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+statusDisplay.innerHTML = currentPlayerTurn();
+function handleCellPlayed(clickedCell, clickedCellIndex) {
+    gameState[clickedCellIndex] = currentPlayer;
+    clickedCell.innerHTML = currentPlayer;
+}
+
+function PlayerChange() {
+    currentPlayer = currentPlayer === "player1" ? "player2" : "player1";
+    statusDisplay.innerHTML = currentPlayerTurn();
+}
+
+
+
