@@ -2,11 +2,13 @@
 const statusDisplay = document.querySelector('.gamestatus');
 gameActive = true;
 currentPlayer = "player1";
-gameState = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 
 const winningMessage = () => `Player ${currentPlayer} won!`;
 const drawMessage = () => `Draw`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+const player1 = document.querySelector(".player1")
+const player2 = document.querySelector(".player2")
 const winningConditions = [
     [0, 1, 2, 3],
     [1, 2, 3, 4],
@@ -80,37 +82,58 @@ const winningConditions = [
 ]
 
 
-document.querySelectorALL(".cell").addEventListener('click'), () => {
-    console.log("clicked")
-};
+let grid = document.querySelectorAll(".cell")
 
+grid.forEach((circle) => {
+    circle.addEventListener(("click"), () => {
+        boxClicked(e)
+    })
+})
 
+const Player_1 = "Player-1"
+const Player_2 = "Player-2"
 
+function boxClicked(e) {
+    const id = e.target.id
+    if (board[id] === "") {
+        board[id] = currentPlayerTurn
+        e.target.innerText = currentPlayerTurn
+        currentPlayerTurn = currentPlayerTurn === "player1" ? "player2" : "player1";
+    }
+    if (e.target.innerText == "player1") {
+        currentPlayerTurn.innerText = "Player 1 Turn"
+    }
+    else if ((e.target.innerText = "player2")) {
+        currentPlayerTurn.innerText = "Player 2 Turn"
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-statusDisplay.innerHTML = currentPlayerTurn();
-function handleCellPlayed(clickedCell, clickedCellIndex) {
-    gameState[clickedCellIndex] = currentPlayer;
-    clickedCell.innerHTML = currentPlayer;
 }
 
-function PlayerChange() {
-    currentPlayer = currentPlayer === "player1" ? "player2" : "player1";
-    statusDisplay.innerHTML = currentPlayerTurn();
-}
+
+
+
+
+
+
+
+
+// statusDisplay.innerHTML = currentPlayerTurn();
+// function handleCellPlayed(clickedCell, clickedCellIndex) {
+//     gameState[clickedCellIndex] = currentPlayer;
+//     clickedCell.innerHTML = currentPlayer;
+// }
+
+// function PlayerChange() {
+//     currentPlayer = currentPlayer === "player1" ? "player2" : "player1";
+//     statusDisplay.innerHTML = currentPlayerTurn();
+// }
+
+
+
+
+
+
+
 
 
 
