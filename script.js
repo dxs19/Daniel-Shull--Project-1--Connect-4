@@ -1,14 +1,12 @@
 
 const statusDisplay = document.querySelector('.gamestatus');
-gameActive = true;
-currentPlayer = "player1";
-board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+let gameActive = true;
+let currentPlayer = "player1";
+let board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 
 const winningMessage = () => `Player ${currentPlayer} won!`;
 const drawMessage = () => `Draw`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
-const player1 = document.querySelector(".player1")
-const player2 = document.querySelector(".player2")
 const winningConditions = [
     [0, 1, 2, 3],
     [1, 2, 3, 4],
@@ -85,30 +83,72 @@ const winningConditions = [
 let grid = document.querySelectorAll(".cell")
 
 grid.forEach((circle) => {
-    circle.addEventListener(("click"), () => {
+    circle.addEventListener(("click"), (e) => {
         boxClicked(e)
     })
 })
 
-const Player_1 = "Player-1"
-const Player_2 = "Player-2"
 
 function boxClicked(e) {
-    const id = e.target.id
+    const id = e.target.getAttribute("data-cell-index")
+    console.log(id)
     if (board[id] === "") {
-        board[id] = currentPlayerTurn
-        e.target.innerText = currentPlayerTurn
-        currentPlayerTurn = currentPlayerTurn === "player1" ? "player2" : "player1";
-    }
-    if (e.target.innerText == "player1") {
-        currentPlayerTurn.innerText = "Player 1 Turn"
-    }
-    else if ((e.target.innerText = "player2")) {
-        currentPlayerTurn.innerText = "Player 2 Turn"
-    }
+        board[id] = currentPlayer
+        e.target.style = 'red'
+        currentPlayer = currentPlayer === "player1" ? "player2" : "player1";
+        console.log(currentPlayer)
 
+    }
+    statusDisplay.innerHTML = currentPlayerTurn()
+    // if (e.target.innerText == "player1") {
+    //     currentPlayer.innerText = "Player 1 Turn"
+    // }
+    // else if ((e.target.innerText = "player2")) {
+    //     currentPlayer.innerText = "Player 2 Turn"
+    // }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const Player_1 = 'Player-1'
+// const Player_2 = 'Player-2'
+// let turn = Player_1
+
+// function boxClicked(event) {
+//     const grid = event.target
+//     const gridNumber = grid.dataset.index
+//     if (grid.innerText != "") {
+//         return;
+//     }
+//     if (turn === Player_1) {
+//         grid.innerText = Player_1
+//         board[gridNumber - 1] = Player_1
+//         turn = Player_2
+//     }
 
 
 
