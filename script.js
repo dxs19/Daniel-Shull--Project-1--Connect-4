@@ -78,58 +78,33 @@ const winningConditions = [
     [10, 16, 22, 28],
     [3, 9, 15, 21]
 ]
-// function results() {
-//     let roundWon = false;
-//     for (let i = 0; i < winningConditions.length; i++) {
-//         console.log(winningConditions[i])
-//         const winCondition = winningConditions[i]
-//         let a = board[winCondition[0]]
-//         let b = board[winCondition[1]]
-//         let c = board[winCondition[2]]
-//         let d = board[winCondition[3]]
-//         if (a === "" || b === "" || c === "" || d === "") {
-//             continue
-//         }
-//         if (a === b && b === c && c === d) {
-//             roundWon = true
-//             break
-//         }
-
-//         if (roundWon) {
-//             console.log('you won')
-//             statusDisplay.innerHTML = winningMessage()
-//             gameActive = false
-//             return
-//         }
-
-//         let roundDraw = !board.includes("");
-//         if (roundDraw) {
-//             statusDisplay.innerHTML = drawMessage();
-//             gameActive = false;
-//             return;
-//         }
-
-//     }
-
-// }
 // Winning Conditions
 const winning = () => {
     let roundWon = false
     for (let i = 0; i < winningConditions.length; i++) {
+        if (board[winningConditions[i][0]] === 'player1' &&
+            board[winningConditions[i][1]] === 'player1' &&
+            board[winningConditions[i][2]] === 'player1' &&
+            board[winningConditions[i][3]] === 'player1'
+
+        ) {
+            roundWon = true
+            console.log(roundWon)
+        }
         if (
-            board[winningConditions[i][0]].querySelectorAll === ("#player-1") &&
-            board[winningConditions[i][1]].querySelectorAll === ("#player-1") &&
-            board[winningConditions[i][2]].querySelectorAll === ("#player-1") &&
-            board[winningConditions[i][3]].querySelectorAll === ("#player-1")
+            board[winningConditions[i][0]].id === "#player-1" &&
+            board[winningConditions[i][1]].id === "#player-1" &&
+            board[winningConditions[i][2]].id === "#player-1" &&
+            board[winningConditions[i][3]].id === "#player-1"
         ) {
             roundWon = true
             console.log("in the winning condition")
         }
-        // else if (
-        //     board[winningConditions[i][0]].id === "player-2" &&
-        //     board[winningConditions[i][1]].id === "player-2" &&
-        //     board[winningConditions[i][2]].id === "player-2" &&
-        //     board[winningConditions[i][3]].id === "player-2") { roundWon = true }
+        else if (
+            board[winningConditions[i][0]].id === "player-2" &&
+            board[winningConditions[i][1]].id === "player-2" &&
+            board[winningConditions[i][2]].id === "player-2" &&
+            board[winningConditions[i][3]].id === "player-2") { roundWon = true }
     }
     if (roundWon) {
         statusDisplay.innerHTML = winningMessage()
@@ -151,20 +126,18 @@ grid.forEach((circle) => {
 // Function for Event Listner
 function boxClicked(e) {
     const id = e.target.getAttribute("data-cell-index")
-    console.log(e)
     if (board[id] === "") {
         board[id] = currentPlayer
         currentPlayer = currentPlayer === "player1" ? "player2" : "player1";
-        console.log(currentPlayer)
+        // console.log(currentPlayer)
         if (currentPlayer === "player1") {
             e.target.style.backgroundColor = 'red'
-            e.target.id = "player-1"
+            e.target.id = "player1"
         }
         else {
             e.target.style.backgroundColor = 'blue'
-            e.target.id = "player-2"
+            e.target.id = "player2"
         }
-        console.log(id)
     }
     statusDisplay.innerHTML = currentPlayerTurn()
     winning()
