@@ -94,10 +94,14 @@ function boxClicked(e) {
     console.log(id)
     if (board[id] === "") {
         board[id] = currentPlayer
-        e.target.style = 'red'
         currentPlayer = currentPlayer === "player1" ? "player2" : "player1";
         console.log(currentPlayer)
-
+        if (currentPlayer === "player1") {
+            e.target.style.backgroundColor = 'red'
+        }
+        else {
+            e.target.style.backgroundColor = 'blue'
+        }
     }
     statusDisplay.innerHTML = currentPlayerTurn()
     // if (e.target.innerText == "player1") {
