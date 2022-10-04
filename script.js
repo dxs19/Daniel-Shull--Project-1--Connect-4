@@ -78,6 +78,40 @@ const winningConditions = [
     [10, 16, 22, 28],
     [3, 9, 15, 21]
 ]
+// function results() {
+//     let roundWon = false;
+//     for (let i = 0; i < winningConditions.length; i++) {
+//         console.log(winningConditions[i])
+//         const winCondition = winningConditions[i]
+//         let a = board[winCondition[0]]
+//         let b = board[winCondition[1]]
+//         let c = board[winCondition[2]]
+//         let d = board[winCondition[3]]
+//         if (a === "" || b === "" || c === "" || d === "") {
+//             continue
+//         }
+//         if (a === b && b === c && c === d) {
+//             roundWon = true
+//             break
+//         }
+
+//         if (roundWon) {
+//             console.log('you won')
+//             statusDisplay.innerHTML = winningMessage()
+//             gameActive = false
+//             return
+//         }
+
+//         let roundDraw = !board.includes("");
+//         if (roundDraw) {
+//             statusDisplay.innerHTML = drawMessage();
+//             gameActive = false;
+//             return;
+//         }
+
+//     }
+
+// }
 // Winning Conditions
 const winning = () => {
     let roundWon = false
@@ -88,26 +122,37 @@ const winning = () => {
             board[winningConditions[i][3]] === 'player1'
 
         ) {
+            statusDisplay.innerHTML = 'Player 1 Has Won the Game!'
             roundWon = true
             console.log(roundWon)
         }
-        if (
-            board[winningConditions[i][0]].id === "#player-1" &&
-            board[winningConditions[i][1]].id === "#player-1" &&
-            board[winningConditions[i][2]].id === "#player-1" &&
-            board[winningConditions[i][3]].id === "#player-1"
+        else if (board[winningConditions[i][0]] === 'player2' &&
+            board[winningConditions[i][1]] === 'player2' &&
+            board[winningConditions[i][2]] === 'player2' &&
+            board[winningConditions[i][3]] === 'player2'
+
         ) {
+            statusDisplay.innerHTML = 'Player 2 Has Won the Game!'
             roundWon = true
-            console.log("in the winning condition")
+            console.log(roundWon)
         }
-        else if (
-            board[winningConditions[i][0]].id === "player-2" &&
-            board[winningConditions[i][1]].id === "player-2" &&
-            board[winningConditions[i][2]].id === "player-2" &&
-            board[winningConditions[i][3]].id === "player-2") { roundWon = true }
+        // if (
+        //     board[winningConditions[i][0]].id === "#player-1" &&
+        //     board[winningConditions[i][1]].id === "#player-1" &&
+        //     board[winningConditions[i][2]].id === "#player-1" &&
+        //     board[winningConditions[i][3]].id === "#player-1"
+        // ) {
+        //     roundWon = true
+        //     console.log("in the winning condition")
+        // }
+        //     else if (
+        //         board[winningConditions[i][0]].id === "player-2" &&
+        //         board[winningConditions[i][1]].id === "player-2" &&
+        //         board[winningConditions[i][2]].id === "player-2" &&
+        //         board[winningConditions[i][3]].id === "player-2") { roundWon = true }
     }
     if (roundWon) {
-        statusDisplay.innerHTML = winningMessage()
+        // statusDisplay.innerHTML = 'Player 1 Has Won the Game'
         gameActive = false
         console.log('you won')
         return
