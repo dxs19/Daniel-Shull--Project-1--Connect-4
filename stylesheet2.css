@@ -1,0 +1,14 @@
+* {
+    background-color: aquamarine;
+}
+
+.title {
+    font-size: 70 px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+body {
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+}
