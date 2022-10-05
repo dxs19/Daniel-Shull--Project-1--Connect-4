@@ -3,9 +3,6 @@ const statusDisplay = document.querySelector('.gamestatus');
 let gameActive = true;
 let currentPlayer = "player1";
 let board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
-if (board[41]) {
-    document.querySelector('34')
-}
 const winningMessage = () => `Player ${currentPlayer} won!`;
 const drawMessage = () => `Draw`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
@@ -95,7 +92,6 @@ const winning = () => {
         ) {
             statusDisplay.innerHTML = 'Player 1 Has Won the Game!'
             roundWon = true
-            console.log(roundWon)
         }
         else if (board[winningConditions[i][0]] === 'player2' &&
             board[winningConditions[i][1]] === 'player2' &&
@@ -105,11 +101,11 @@ const winning = () => {
         ) {
             statusDisplay.innerHTML = 'Player 2 Has Won the Game!'
             roundWon = true
-            console.log(roundWon)
         }
     }
     if (roundWon) {
         gameActive = false
+        console.log(gameActive)
         return
     }
 }
@@ -130,11 +126,11 @@ function boxClicked(e) {
         board[id] = currentPlayer
         currentPlayer = currentPlayer === "player1" ? "player2" : "player1";
         if (currentPlayer === "player1") {
-            e.target.style.backgroundColor = 'red'
+            e.target.style.backgroundColor = 'yellow'
             e.target.id = "player1"
         }
         else {
-            e.target.style.backgroundColor = 'blue'
+            e.target.style.backgroundColor = 'red'
             e.target.id = "player2"
         }
     }
@@ -144,7 +140,6 @@ function boxClicked(e) {
 
 // restart game
 function restartGame() {
-    console.log(board)
     gameActive = true
     currentPlayer = "player1"
     board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];

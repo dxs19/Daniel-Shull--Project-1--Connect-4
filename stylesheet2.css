@@ -8,6 +8,10 @@
     color: black;
 }
 
+h1 {
+    text-align: center;
+}
+
 body {
     font-size: larger;
     font-family: 'Courier New', Courier, monospace;

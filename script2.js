@@ -1,9 +1,11 @@
 let matrix = [ // go from top corner for indexing
-    [null, null, null, null, null],
-    [null, null, null, null, null],
-    ["player1", "player1", null, null, null],
-    [null, null, null, null, null],
-    [null, null, null, null, "last value"],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+
+
 ]
 
 console.log(matrix[2][1])
