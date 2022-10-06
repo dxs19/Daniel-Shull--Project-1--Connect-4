@@ -120,7 +120,7 @@ grid.forEach((circle) => {
 })
 
 // Function for Event Listner
-function boxClicked(e) {
+boxClicked = ((e) => {
     const id = e.target.getAttribute("data-cell-index")
     if (board[id] === "") {
         board[id] = currentPlayer
@@ -136,17 +136,17 @@ function boxClicked(e) {
     }
     statusDisplay.innerHTML = currentPlayerTurn()
     winning()
-}
+})
 
 // restart game
-function restartGame() {
+restartGame = (() => {
     gameActive = true
     currentPlayer = "player1"
     board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
     statusDisplay.innerHTML = currentPlayerTurn()
     document.querySelectorAll(".cell").forEach(circle => circle.style.backgroundColor = "")
 
-}
+})
 document.querySelector('.restart').addEventListener('click', restartGame);
 
 
