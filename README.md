@@ -42,3 +42,6 @@ Days:
 ### Credits
 1. Photo: https://www.researchgate.net/publication/258381798/figure/fig1/AS:311148797808643@1451195062476/Traditional-Connect-Four-Here-Red-wins-with-four-coins-aligned-diagonally.png
 2. Info: https://github.com/SEI-R-9-19/u1_project_prompt
+3. CSS Help: https://www.w3schools.com/css/css_max-width.asp https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip
+4. Alternating Players help: https://codereview.stackexchange.com/questions/168941/function-to-alternate-players-turns-unless-a-player-has-won
+
