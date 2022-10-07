@@ -3,10 +3,10 @@ let matrix = [ // go from top corner for indexing
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
-    [null, null, null, null, null, null],
-
-
+    [null, null, null, null, null, null]
 ]
+
+
 
 console.log(matrix[2][1])
 
