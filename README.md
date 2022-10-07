@@ -40,7 +40,9 @@ Days:
  ### Trello
  link: https://trello.com/b/OoiJRY1h/connect-4-project-1-daniel-shull
 ### Credits
-1. Photo: https://www.researchgate.net/publication/258381798/figure/fig1/AS:311148797808643@1451195062476/Traditional-Connect-Four-Here-Red-wins-with-four-coins-aligned-diagonally.png
+1. Photos: https://www.researchgate.net/publication/258381798/figure/fig1/AS:311148797808643@1451195062476/Traditional-Connect-Four-Here-Red-wins-with-four-coins-aligned-diagonally.png
+https://static.wixstatic.com/media/4291ab_ba99008466ca4064ac05f312556e1ea7~mv2.png/v1/fill/w_560,h_746,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Screen%20Shot%202022-03-29%20at%208_51_45%20PM.png
+
 2. Info: https://github.com/SEI-R-9-19/u1_project_prompt
 3. CSS Help: https://www.w3schools.com/css/css_max-width.asp https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip
 4. Alternating Players help: https://codereview.stackexchange.com/questions/168941/function-to-alternate-players-turns-unless-a-player-has-won
