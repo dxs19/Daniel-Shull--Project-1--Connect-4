@@ -1,11 +1,11 @@
 
-const statusDisplay = document.querySelector('.gamestatus');
-let gameActive = true;
-let currentPlayer = "player1";
-let board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
-const winningMessage = () => `Player ${currentPlayer} won!`;
-const drawMessage = () => `Draw`;
-const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+const statusDisplay = document.querySelector('.gamestatus')
+let gameActive = true
+let currentPlayer = "player1"
+let board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+const winningMessage = () => `Player ${currentPlayer} won!`
+const drawMessage = () => `Draw`
+const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`
 const winningConditions = [
     [0, 1, 2, 3],
     [1, 2, 3, 4],
@@ -108,11 +108,11 @@ const winning = () => {
         console.log(gameActive)
         return
     }
-    let roundDraw = !gameState.includes("")
+    let roundDraw = !board.includes("")
     if (roundDraw) {
         statusDisplay.innerHTML = drawMessage()
         gameActive = false
-        return;
+        return
     }
 }
 
