@@ -108,6 +108,12 @@ const winning = () => {
         console.log(gameActive)
         return
     }
+    let roundDraw = !gameState.includes("")
+    if (roundDraw) {
+        statusDisplay.innerHTML = drawMessage()
+        gameActive = false
+        return;
+    }
 }
 
 // Event listner 
