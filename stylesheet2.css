@@ -1,10 +1,22 @@
 * {
-    background-color: aquamarine;
+    background-color: rgb(24, 115, 194);
+}
+
+.App-header {
+    text-align: center;
 }
 
 .title {
     font-size: 70 px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.link {
+    color: black
+}
+
+.list {
     color: black;
 }
 
